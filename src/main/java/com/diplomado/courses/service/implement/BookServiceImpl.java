@@ -13,6 +13,11 @@ import java.util.stream.Collectors;
 public class BookServiceImpl implements BookService {
 
     private BookRepository bookRepository;
+
+    public BookServiceImpl(BookRepository bookRepository) {
+        this.bookRepository = bookRepository;
+    }
+
     @Override
     public List<Book> getBookByStudent(Integer studentId) {
         return  bookRepository.findAll().stream()
